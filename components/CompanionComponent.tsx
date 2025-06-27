@@ -48,7 +48,7 @@ const CompanionComponent = ({ companionId, subject, topic, name, voice, style, u
       clientMessages: ['transcript'],
       serverMessages: []
     }
-    //@ts-expect-error
+    //@ts-expect-error: vapi.start type mismatch due to custom assistant override structure
     vapi.start(configureAssistant(voice, style), assistantOverrides)
   }
 
