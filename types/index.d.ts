@@ -66,11 +66,6 @@ interface Avatar {
 }
 
 
-interface SavedMessage {
-  role: "user" | "system" | "assistant";
-  content: string;
-}
-
 interface CompanionComponentProps {
   companionId: string;
   subject: string;
