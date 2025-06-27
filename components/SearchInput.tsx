@@ -9,9 +9,9 @@ const SearchInput = () => {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const query = searchParams.get('topic') || '';
+  
 
-  const [searchValue, useSearchValue] = useState('')
+  const [searchValue, setSearchValue] = useState('')
 
   useEffect(() => {
      
@@ -30,7 +30,7 @@ const SearchInput = () => {
   return (
     <div className='relative flex gap-2 px-2 py-1 h-fit border border-black rounded-lg'>
       <Image src='/icons/search.svg' alt='search' width={15} height={15}/>
-      <input className='outline-none' placeholder='Search companions...' value={searchValue} onChange={(e) => useSearchValue(e.target.value)}/>
+      <input className='outline-none' placeholder='Search companions...' value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
     </div>
   )
 }

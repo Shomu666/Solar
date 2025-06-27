@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Logo from '../public/favicon.png'
 import React from 'react'
 import NavbarItems from './NavbarItems'
-import { SignedIn, SignedOut, SignInButton, SignOutButton, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 
 const Navbar = () => {
   return (

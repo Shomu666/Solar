@@ -6,7 +6,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import soundwaves from '@/constants/soundwaves.json'
-import { id } from 'zod/v4/locales';
+
 import { addToSessionHistory } from '@/lib/actions/companion.actions';
 
 
@@ -87,7 +87,7 @@ const CompanionComponent = ({ companionId, subject, topic, name, voice, style, u
     };
     const onSpeechStart = () => setIsSpeaking(true);
     const onSpeechEnd = () => setIsSpeaking(false);
-    const onError = (error: Error) => console.log(error.message)
+    
 
     vapi.on('call-start', onCallStart)
     vapi.on('call-end', onCallEnd)
@@ -102,7 +102,7 @@ const CompanionComponent = ({ companionId, subject, topic, name, voice, style, u
       vapi.off('speech-start', onSpeechStart)
       vapi.off('call-end', onSpeechEnd)
     }
-  }, [])
+  }, [companionId])
   return (
     <section className='flex flex-col h-[70vh]'>
       <section className='flex gap-8 max-sm:flex-col'>
